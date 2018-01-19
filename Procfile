@@ -1,1 +1,1 @@
-web: node bot2.js -p $PORT
+worker: node bot2.js
