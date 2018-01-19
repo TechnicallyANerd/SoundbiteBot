@@ -24,12 +24,6 @@ client.on("message", (message) => {
   }
   if (message.content.startsWith("soundboardtopten")) {
     message.channel.send("`running...`");
-    request({
-            url: "http://oxsoundboard.com/api/get_top",
-            json: true
-        }, function (error, response, body) {
-            console.log(body);
-        });
   }
 });
 
