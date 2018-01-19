@@ -51,7 +51,8 @@ client.on("message", (message) => {
         try {
           const parsedData = JSON.parse(rawData);
           console.log(parsedData);
-          resp_string = parsedData
+          resp_string = parsedData;
+          message.channel.send(resp_string);
         } catch (e) {
           console.error(e.message);
         }
@@ -59,7 +60,7 @@ client.on("message", (message) => {
     }).on('error', (e) => {
       console.error(`Got error: ${e.message}`);
     });
-    message.channel.send(resp_string);
+
   }
 });
 
