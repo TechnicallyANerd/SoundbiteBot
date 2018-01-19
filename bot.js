@@ -21,7 +21,7 @@ client.on("message", (message) => {
   }
   if (message.content.startsWith("soundboardtopten")) {
     message.channel.send("`running...`");
-    var request = new XMLHttpRequest();
+    /*var request = new XMLHttpRequest();
     request.open('GET', 'http://oxsoundboard.com/api/get_top', true);
 
     request.onload = function() {
@@ -40,7 +40,7 @@ client.on("message", (message) => {
       message.channel.send("`Oops! Looks like I can't reach the server right now. Bummer. Try again later?`");
     };
 
-    request.send();
+    request.send();*/
   }
 });
 
