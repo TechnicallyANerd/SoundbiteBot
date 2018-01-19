@@ -24,12 +24,32 @@ client.on("message", (message) => {
   }
   if (message.content.startsWith("soundboardtopten")) {
     message.channel.send("`running...`");
-    request({
-            url: "http://oxsoundboard.com/api/get_top",
-            json: true
-        }, function (error, response, body) {
-            console.log(body);
-        });
+    var http = require('http');
+    var str = '';
+
+    var options = {
+          host: 'www.oxsoundboard.com',
+          path: '/api/get_top'
+    };
+
+    callback = function(response) {
+
+          response.on('data', function (chunk) {
+                str += chunk;
+          });
+
+          response.on('end', function () {
+                console.log(str);
+          });
+
+          //return str;
+    }
+
+    var req = http.request(options, callback).end();
+
+    // These just return undefined and empty
+    console.log(req.data);
+    console.log(str);
   }
 });
 
