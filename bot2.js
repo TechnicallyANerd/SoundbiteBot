@@ -23,7 +23,7 @@ client.on("message", (message) => {
   }
   if (message.content.startsWith("soundboardtopten")) {
     message.channel.send("`running...`");
-    const resp_string = 'none';
+    var resp_string = 'none';
     var http = require('http');
     http.get('http://www.oxsoundboard.com/api/get_top/', (res) => {
       const { statusCode } = res;
@@ -53,6 +53,7 @@ client.on("message", (message) => {
           console.log(parsedData);
           resp_string = parsedData;
           message.channel.send(resp_string);
+          console.log(parsedData.data);
         } catch (e) {
           console.error(e.message);
         }
