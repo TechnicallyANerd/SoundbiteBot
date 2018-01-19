@@ -23,6 +23,7 @@ client.on("message", (message) => {
   }
   if (message.content.startsWith("soundboardtopten")) {
     message.channel.send("`running...`");
+    const resp_string = 'none';
     var http = require('http');
     http.get('http://www.oxsoundboard.com/api/get_top/', (res) => {
       const { statusCode } = res;
@@ -50,7 +51,7 @@ client.on("message", (message) => {
         try {
           const parsedData = JSON.parse(rawData);
           console.log(parsedData);
-          message.channel.send(parsedData);
+          resp_string = parsedData
         } catch (e) {
           console.error(e.message);
         }
@@ -58,12 +59,8 @@ client.on("message", (message) => {
     }).on('error', (e) => {
       console.error(`Got error: ${e.message}`);
     });
+    message.channel.send(resp_string);
   }
 });
 
 client.login(process.env.BOT_TOKEN);
-
-var express = require('express');
-var app     = express();
-
-app.set('port', (process.env.PORT || 5000));
