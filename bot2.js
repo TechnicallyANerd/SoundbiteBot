@@ -22,7 +22,7 @@ client.on("message", (message) => {
     message.channel.send("`works`");
   }
   if (message.content.startsWith("soundboardtopten")) {
-    message.channel.send("`running...`");
+    message.channel.send("Top 10 most played sounds:");
     var resp_string = 'none';
     var http = require('http');
     http.get('http://www.oxsoundboard.com/api/get_top/', (res) => {
@@ -50,7 +50,6 @@ client.on("message", (message) => {
       res.on('end', () => {
         try {
           const parsedData = JSON.parse(rawData);
-          console.log(parsedData);
           var result = parsedData.data;
           for (var i = 0; i < result.length; i++){
             message.channel.send(result[i]);
