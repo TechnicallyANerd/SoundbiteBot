@@ -5,9 +5,10 @@
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
-   },
-   "dependencies": {
+  },
+  "dependencies": {
     "discord.js": "11.1.0",
+    "jquery": "^3.2.1",
     "request": "2.01.0"
-   }
+  }
 }
