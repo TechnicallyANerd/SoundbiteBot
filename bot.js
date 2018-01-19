@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const $ = require('jQuery');
+//const $ = require('jQuery');
 const client = new Discord.Client();
 
 client.on("ready", () => {
@@ -19,6 +19,14 @@ client.on("message", (message) => {
   }
   if (message.content.startsWith("test")) {
     message.channel.send("`works`");
+  }
+  if (message.content.startsWith("jquery")) {
+    message.channel.send("`jquery`");
+    if (typeof jQuery == 'undefined'){
+      message.channel.send("`not present`");
+    } else {
+      message.channel.send("`present`");
+    }
   }
   if (message.content.startsWith("topsoundboard")) {
     message.channel.send("It worked!");
