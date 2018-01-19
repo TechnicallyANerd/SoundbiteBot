@@ -51,6 +51,7 @@ client.on("message", (message) => {
         try {
           const parsedData = JSON.parse(rawData);
           console.log(parsedData);
+          message.channel.send(parsedData);
         } catch (e) {
           console.error(e.message);
         }
