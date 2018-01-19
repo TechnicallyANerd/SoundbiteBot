@@ -19,6 +19,7 @@ client.on("message", (message) => {
     message.channel.send("`nope`");
   }
   if (message.content.startsWith("test")) {
+    console.log("works");
     message.channel.send("`works`");
   }
   if (message.content.startsWith("soundboardtopten")) {
