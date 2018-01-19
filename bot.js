@@ -20,6 +20,7 @@ client.on("message", (message) => {
     message.channel.send("`works`");
   }
   if (message.content.startsWith("soundboardtopten")) {
+    message.channel.send("`running...`");
     var request = new XMLHttpRequest();
     request.open('GET', 'http://oxsoundboard.com/api/get_top', true);
 
