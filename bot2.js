@@ -25,7 +25,7 @@ client.on("message", (message) => {
   if (message.content.startsWith("soundboardtopten")) {
     message.channel.send("`running...`");
     var http = require('http');
-    http.get('http://oxsoundboard.com/api/get_top', (res) => {
+    http.get('http://www.oxsoundboard.com/api/get_top/', (res) => {
       const { statusCode } = res;
       const contentType = res.headers['content-type'];
 
