@@ -1,1 +1,1 @@
-web: node bot2.js
+web: node bot2.js -p $PORT
