@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var request = require ("request");
+const http = require('http');
 
 client.on("ready", () => {
   console.log("I am ready!");
@@ -26,7 +27,7 @@ client.on("message", (message) => {
             url: "http://oxsoundboard.com/api/get_top",
             json: true
         }, function (error, response, body) {
-            message.channel.send(body);
+            console.log(body);
         });
   }
 });
