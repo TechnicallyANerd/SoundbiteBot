@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-//const $ = require('jQuery');
+var $ = require('jQuery');
 const client = new Discord.Client();
 
 client.on("ready", () => {
@@ -29,10 +29,10 @@ client.on("message", (message) => {
     }
   }
   if (message.content.startsWith("topsoundboard")) {
-    message.channel.send("It worked!");
+    message.channel.send("It worked!");/*
     $.getJSON("http://oxsoundboard.com/api/get_top", function(data){
       message.channel.send(data);
-    });
+    });*/
   }
 });
 
