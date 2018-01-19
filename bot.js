@@ -22,7 +22,7 @@ client.on("message", (message) => {
   }
   if (message.content.startsWith("jquery")) {
     message.channel.send("`jquery`");
-    if (typeof $ == 'undefined'){
+    if (typeof $== 'function'){
       message.channel.send("`not present`");
     } else {
       message.channel.send("`present`");
