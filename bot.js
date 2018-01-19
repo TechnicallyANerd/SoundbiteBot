@@ -20,20 +20,6 @@ client.on("message", (message) => {
   if (message.content.startsWith("test")) {
     message.channel.send("`works`");
   }
-  if (message.content.startsWith("jquery")) {
-    message.channel.send("`jquery`");
-    if (typeof $== 'function'){
-      message.channel.send("`not present`");
-    } else {
-      message.channel.send("`present`");
-    }
-  }
-  if (message.content.startsWith("topsoundboard")) {
-    message.channel.send("It worked!");/*
-    $.getJSON("http://oxsoundboard.com/api/get_top", function(data){
-      message.channel.send(data);
-    });*/
-  }
 });
 
 client.login(process.env.BOT_TOKEN);
