@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "discord.js": "11.1.0",
+    "express": "^4.16.2",
     "http": "0.0.0",
     "jquery": "^3.2.1",
     "request": "2.01.0"
