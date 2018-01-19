@@ -16,6 +16,9 @@ client.on("message", (message) => {
   if (message.content.startsWith("Ping")) {
     message.channel.send("`nope`");
   }
+  if (message.content.startsWith("test")) {
+    message.channel.send("`works`");
+  }
   if (message.content.startsWith("topsoundboard")) {
     message.channel.send("It worked!");
     $.getJSON("http://oxsoundboard.com/api/get_top", function(data){
