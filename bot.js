@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-var $ = require('jQuery');
 const client = new Discord.Client();
 
 client.on("ready", () => {
