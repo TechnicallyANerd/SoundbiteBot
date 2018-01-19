@@ -32,24 +32,11 @@ client.on("message", (message) => {
           path: '/api/get_top'
     };
 
-    callback = function(response) {
-
-          response.on('data', function (chunk) {
-                str += chunk;
-          });
-
-          response.on('end', function () {
-                console.log(str);
-          });
-
-          //return str;
-    }
-
-    var req = http.request(options, callback).end();
-
-    // These just return undefined and empty
-    console.log(req.data);
-    console.log(str);
+    http.get(options, function (response) {
+      response.setEncoding('utf8')
+      response.on('data', console.log)
+      response.on('error', console.error)
+    });
   }
 });
 
