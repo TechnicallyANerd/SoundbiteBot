@@ -17,9 +17,10 @@ client.on("message", (message) => {
     message.channel.send("`nope`");
   }
   if (message.content.startsWith("topsoundboard")) {
+    message.channel.send("It worked!");
     $.getJSON("http://oxsoundboard.com/api/get_top", function(data){
       message.channel.send(data);
-    })
+    });
   }
 });
 
