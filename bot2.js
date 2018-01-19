@@ -24,13 +24,26 @@ client.on("message", (message) => {
   }
   if (message.content.startsWith("soundboardtopten")) {
     message.channel.send("`running...`");
-    request({
-            url: "http://oxsoundboard.com/api/get_top",
-            json: true
-        }, function (error, response, body) {
-            console.log(body);
-        });
-  }
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://oxsoundboard.com/api/get_top', true);
+
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        // Success!
+        //var data = JSON.parse(request.responseText);
+        console.log("SUCCESS")
+      } else {
+        // We reached our target server, but it returned an error
+        console.log("505")
+      }
+    };
+
+    request.onerror = function() {
+      // There was a connection error of some sort
+      console.log("FAILURE")
+    };
+
+    request.send();
 });
 
 client.login(process.env.BOT_TOKEN);
