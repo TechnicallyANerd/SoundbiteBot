@@ -25,17 +25,38 @@ client.on("message", (message) => {
   if (message.content.startsWith("soundboardtopten")) {
     message.channel.send("`running...`");
     var http = require('http');
-    var str = '';
+    http.get('http://oxsoundboard.com/api/get_top', (res) => {
+      const { statusCode } = res;
+      const contentType = res.headers['content-type'];
 
-    var options = {
-          host: 'www.oxsoundboard.com',
-          path: '/api/get_top'
-    };
+      let error;
+      if (statusCode !== 200) {
+        error = new Error('Request Failed.\n' +
+                          `Status Code: ${statusCode}`);
+      } else if (!/^application\/json/.test(contentType)) {
+        error = new Error('Invalid content-type.\n' +
+                          `Expected application/json but received ${contentType}`);
+      }
+      if (error) {
+        console.error(error.message);
+        // consume response data to free up memory
+        res.resume();
+        return;
+      }
 
-    http.get(options, function (response) {
-      response.setEncoding('utf8')
-      response.on('data', console.log)
-      response.on('error', console.error)
+      res.setEncoding('utf8');
+      let rawData = '';
+      res.on('data', (chunk) => { rawData += chunk; });
+      res.on('end', () => {
+        try {
+          const parsedData = JSON.parse(rawData);
+          console.log(parsedData);
+        } catch (e) {
+          console.error(e.message);
+        }
+      });
+    }).on('error', (e) => {
+      console.error(`Got error: ${e.message}`);
     });
   }
 });
