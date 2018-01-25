@@ -21,8 +21,8 @@ client.on("message", (message) => {
     console.log("works");
     message.channel.send("`works`");
   }
-  if (message.content.startsWith("soundboardtopten")) {
-    message.channel.send("Top 10 most played sounds:");
+  if (message.content.startsWith("soundboard_topplayed")) {
+    message.channel.send("Top 4 most played sounds:");
     var resp_string = 'none';
     var http = require('http');
     http.get('http://www.oxsoundboard.com/api/get_top/', (res) => {
