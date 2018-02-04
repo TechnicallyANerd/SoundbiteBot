@@ -17,10 +17,6 @@ client.on("message", (message) => {
   if (message.content.startsWith("Ping")) {
     message.channel.send("`nope`");
   }
-  if (message.content.startsWith("test")) {
-    console.log("works");
-    message.channel.send("`works`");
-  }
   if (message.content.startsWith("soundboard_topplayed")) {
     message.channel.send("Top 4 most played sounds:");
     var resp_string = 'none';
