@@ -11,7 +11,7 @@ client.on("ready", () => {
 client.on("message", (message) => {
   if (message.author.bot) return;
   if (message.content.startsWith(prefix)) {
-    var split_message = massage.split(" ");
+    var split_message = message.split(" ");
     if (split_message.length() > 1){
       if (split_message[1] == "top"){
         message.channel.send("Top 4 most played sounds:");
