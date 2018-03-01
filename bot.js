@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const http = require('http');
-const prexif = "!sb";
+const prefix = "!sb";
 const path = "http://oxsoundboard.com/";
 
 client.on("ready", () => {
