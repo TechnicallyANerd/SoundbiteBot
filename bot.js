@@ -43,9 +43,11 @@ client.on("message", (message) => {
             try {
               const parsedData = JSON.parse(rawData);
               var result = parsedData.data;
+              var output = "";
               for (var i = 0; i < result.length; i++){
-                message.channel.send(result[i]);
+                output += result[i] + "\n";
               }
+              message.channel.send(output);
             } catch (e) {
               console.error(e.message);
             }
