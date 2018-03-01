@@ -55,7 +55,7 @@ client.on("message", (message) => {
         });
       }
       if (split_message[1] == "link" && split_message.length == 3){
-        var link = "`" + path + split_message[2] + "`";
+        var link = path + split_message[2];
         message.channel.send(link);
       }
     }
