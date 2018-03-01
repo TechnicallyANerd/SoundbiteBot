@@ -58,7 +58,7 @@ client.on("message", (message) => {
       }
       if (split_message[1] == "help") {
         var output = "```SoundbiteBot: prefix all SoundbiteBot instructions with !sb\n - !sb help : lists the bot's funcitonality\n - !sb top : prints the top ten sounds\n - !sb link <sound> : displays the link to a specified sound```";
-        message.channel.send();
+        message.channel.send(output);
       }
       if (split_message[1] == "link" && split_message.length == 3){
         var link = path + split_message[2];
