@@ -12,7 +12,7 @@ client.on("message", (message) => {
   if (message.author.bot) return;
   if (message.content.startsWith(prefix)) {
     var split_message = message.content.split(" ");
-    if (split_message.length() > 1){
+    if (split_message.length > 1){
       if (split_message[1] == "top"){
         message.channel.send("Top 4 most played sounds:");
         var resp_string = 'none';
@@ -54,7 +54,7 @@ client.on("message", (message) => {
           console.error(`Got error: ${e.message}`);
         });
       }
-      if (split_message[1] == "link" && split_message.length() == 3){
+      if (split_message[1] == "link" && split_message.length == 3){
         var link = "`" + path + split_message[2] + "`";
         message.channel.send(link);
       }
