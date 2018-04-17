@@ -60,7 +60,7 @@ client.on("message", (message) => {
         message.channel.send(path);
       }
       if (split_message[1] == "help") {
-        var output = "```SoundbiteBot: prefix all SoundbiteBot instructions with !sb\n - !sb help : lists the bot's funcitonality\n - !sb top : prints the top ten sounds\n - !sb link <sound> : displays the link to a specified sound```";
+        var output = "```SoundbiteBot: prefix all SoundbiteBot instructions with !sb\n - !sb help : lists the bot's funcitonality\n - !sb top : prints the top ten sounds\n - !sb link <sound> : displays the link to a specified sound\n - !sb site : displays a link to the soundboard site```";
         message.channel.send(output);
       }
       if (split_message[1] == "link" && split_message.length == 3){
