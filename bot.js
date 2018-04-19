@@ -14,7 +14,7 @@ client.on("message", (message) => {
     var split_message = message.content.split(" ");
     if (split_message.length > 1){
       if (split_message[1] == "top"){
-        message.channel.send("Top 4 most played sounds:");
+        message.channel.send("Top 10 most played sounds:");
         var resp_string = 'none';
         var http = require('http');
         http.get('http://www.oxsoundboard.com/api/get_top/', (res) => {
