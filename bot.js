@@ -33,7 +33,7 @@ client.on("message", (message) => {
             console.error(error.message);
             // consume response data to free up memory
             res.resume();
-            return;
+            //return;
           }
 
           res.setEncoding('utf8');
